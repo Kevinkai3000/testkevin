@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Serpent — 终极贪吃蛇</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="aurora"></div>
+  <main class="game-wrapper">
+    <header class="top-bar">
+      <div class="branding">
+        <h1>Neon Serpent</h1>
+        <p>世界上最炫丽的贪吃蛇，响应式音效、动态光影与粒子效果</p>
+      </div>
+      <aside class="meta">
+        <button id="themeToggle" class="glass-button" type="button" aria-label="切换主题">🌗</button>
+        <div class="badges">
+          <span class="badge">速度 X<span id="speedBadge">1</span></span>
+          <span class="badge">长度 <span id="lengthBadge">5</span></span>
+        </div>
+      </aside>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="label">得分</span>
+        <span id="score" class="value">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">最高分</span>
+        <span id="best" class="value">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">关卡</span>
+        <div class="progress">
+          <div id="levelProgress" class="progress-bar"></div>
+        </div>
+        <span id="level" class="value">1</span>
+      </div>
+      <div class="stat">
+        <span class="label">节奏</span>
+        <span id="tempo" class="value">温和</span>
+      </div>
+    </section>
+
+    <section class="canvas-container">
+      <canvas id="gameCanvas" width="640" height="640" role="img" aria-label="贪吃蛇游戏画布"></canvas>
+      <div class="canvas-glow"></div>
+      <div id="overlay" class="overlay">
+        <div class="overlay-content">
+          <h2>准备好起舞了吗？</h2>
+          <p>使用 <strong>方向键/WASD</strong> 或 <strong>轻触按钮</strong> 控制蛇蛇。
+            收集多彩能量果实，避开自己，尽情欣赏光影流动。</p>
+          <button id="startButton" class="glass-button">点击开始</button>
+        </div>
+      </div>
+      <div class="touch-controls">
+        <button class="control" data-dir="up" aria-label="向上">▲</button>
+        <div class="middle-row">
+          <button class="control" data-dir="left" aria-label="向左">◀</button>
+          <button class="control" data-dir="down" aria-label="向下">▼</button>
+          <button class="control" data-dir="right" aria-label="向右">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="info">
+      <p>支持 <strong>键盘</strong> 与 <strong>触屏</strong>，吃掉不同颜色的能量果实可触发独特效果。</p>
+      <ul>
+        <li><span class="dot dot--berry"></span> 甜浆果：+10 分</li>
+        <li><span class="dot dot--citrus"></span> 阳光橙：+25 分，速度+10%</li>
+        <li><span class="dot dot--mint"></span> 冰薄荷：慢动作 3 秒</li>
+        <li><span class="dot dot--royal"></span> 皇室星辰：+50 分，身形变幻</li>
+      </ul>
+      <p class="credit">设计 &amp; 开发：你的虚拟助手 — 愿你沉浸在霓虹之夜。</p>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
